@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>初めて訪問される方へ（お持ち込み・計量の流れ） | 株式会社 白井鋼業</title>
+    <style>
+
+* --- 共通ヘッダー設定 --- */
+header { 
+    background: #fff; 
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05); 
+    position: fixed; 
+    width: 100%; 
+    top: 0; 
+    height: 75px; 
+    z-index: 1000; 
+    display: flex; 
+    align-items: center; 
+}
+.header-wrap { 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    width: 100%; 
+    max-width: 1100px; 
+    margin: 0 auto; 
+    padding: 0 20px; 
+}
+.logo { font-weight: bold; font-size: 1.25rem; color: #0f2b5c; }
+.nav-links { display: flex; gap: 20px; list-style: none; }
+.nav-links a { 
+    text-decoration: none; 
+    color: #334155; 
+    font-weight: bold; 
+    font-size: 0.95rem; 
+    transition: color 0.2s; 
+}
+.nav-links a:hover { color: #1d4ed8; }
+body { padding-top: 75px; } /* 固定ヘッダー分だけ本文を下に下げる */
+
+        /* ベーススタイル（トップページのトーン＆マナーを踏襲） */
+        html {
+            scroll-behavior: smooth;
+        }
+        :root {
+            --primary-color: #1a365d; /* 誠実・強固な信頼感の「紺（ネイビー）」 */
+            --secondary-color: #2b6cb0; /* アクセントのスタイリッシュなブルー */
+            --alert-color: #e53e3e; /* 注意書き用のレッド */
+            --dark-color: #2d3748;
+            --light-color: #f7fafc;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', Meiryo, sans-serif; line-height: 1.6; color: var(--dark-color); background-color: var(--light-color); }
+        a { text-decoration: none; color: inherit; }
+        ul { list-style: none; }
+        .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+        .section-title { text-align: center; margin-bottom: 20px; font-size: 2rem; position: relative; padding-bottom: 10px; color: var(--primary-color); }
+        .section-title::after { content: ''; position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); width: 60px; height: 3px; background: var(--primary-color); }
+        section { padding: 60px 0; }
+
+        /* ヘッダー */
+        header { background: #fff; box-shadow: 0 2px 5px rgba(0,0,0,0.05); position: fixed; width: 100%; top: 0; z-index: 100; }
+        .header-wrap { display: flex; justify-content: space-between; align-items: center; height: 70px; }
+        .logo { font-weight: bold; font-size: 1.3rem; color: var(--primary-color); }
+        .nav-links { display: flex; gap: 20px; }
+        .nav-links a:hover { color: var(--secondary-color); }
+
+        /* ページヘッダー（メインビジュアル風） */
+        .page-header { background: linear-gradient(rgba(26, 54, 93, 0.8), rgba(26, 54, 93, 0.9)), url('https://picsum.photos/1200/400') no-repeat center center/cover; padding: 80px 0 50px 0; text-align: center; color: #fff; margin-top: 70px; }
+        .page-header h1 { font-size: 2.2rem; margin-bottom: 15px; font-weight: bold; letter-spacing: 1px; }
+        .page-header p { font-size: 1.1rem; opacity: 0.9; }
+
+        /* 案内用カード・グリッド */
+        .guide-container { background: #fff; border-radius: 8px; padding: 40px 30px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); margin-bottom: 40px; border: 1px solid #e2e8f0; }
+        .step-block { display: flex; gap: 30px; margin-bottom: 40px; padding-bottom: 40px; border-bottom: 1px solid #e2e8f0; }
+        .step-block:last-child { margin-bottom: 0; padding-bottom: 0; border-bottom: none; }
+        
+        .step-badge-wrap { flex-shrink: 0; text-align: center; }
+        .step-badge { background: var(--primary-color); color: #fff; font-size: 1.1rem; font-weight: bold; padding: 8px 20px; border-radius: 4px; display: inline-block; min-width: 120px; }
+        
+        .step-content { flex-grow: 1; }
+        .step-content h3 { font-size: 1.4rem; color: var(--primary-color); margin-bottom: 15px; font-weight: bold; }
+        .step-content p { font-size: 1.05rem; color: #4a5568; margin-bottom: 10px; }
+        
+        /* 注意事項・案内ボックス */
+        .info-box { background: #fff; border: 1px solid #e2e8f0; border-left: 5px solid var(--secondary-color); padding: 20px; border-radius: 0 8px 8px 0; margin-top: 15px; }
+        .info-box-title { font-weight: bold; color: var(--secondary-color); margin-bottom: 5px; }
+        
+        .alert-box { background: #fff5f5; border: 1px solid #fed7d7; border-left: 5px solid var(--alert-color); padding: 20px; border-radius: 0 8px 8px 0; margin-top: 15px; }
+        .alert-box-title { font-weight: bold; color: var(--alert-color); margin-bottom: 5px; }
+        
+        .alert-text { color: var(--alert-color); font-weight: bold; }
+
+        /* ボタン */
+        .btn-wrap { text-align: center; margin-top: 40px; }
+        .btn { display: inline-block; padding: 15px 40px; font-weight: bold; border-radius: 5px; transition: 0.3s; cursor: pointer; background: var(--primary-color); color: #fff; }
+        .btn:hover { opacity: 0.9; transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0,0,0,0.15); }
+
+        /* フッター */
+        footer { background: var(--primary-color); color: rgba(255,255,255,0.8); text-align: center; padding: 25px 0; font-size: 0.9rem; border-top: 3px solid var(--secondary-color); }
+
+        /* レスポンシブ */
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .page-header h1 { font-size: 1.6rem; }
+            .page-header p { font-size: 0.95rem; }
+            .step-block { flex-direction: column; gap: 15px; padding-bottom: 30px; }
+            .step-badge { min-width: 100px; }
+            .step-content h3 { font-size: 1.2rem; }
+            .guide-container { padding: 25px 15px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ヘッダー -->
+    <header>
+        <div class="container header-wrap">
+            <div class="logo"><a href="index.html">株式会社 白井鋼業</a></div>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="top.html#top">TOP</a></li>
+                    <li><a href="top.html#business">事業内容</a></li>
+                    <li><a href="news.html#about">お知らせ</a></li>
+                    <li><a href="about.html#individual">会社概要・アクセス</a></li>
+                    <li><a href="top.html#contact">問い合わせ</a></li>
+
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- ページヘッダー -->
+    <div class="page-header">
+        <div class="container">
+            <h1>初めて訪問される方へ</h1>
+            <p>お持ち込みから計量・お支払いまでの流れをご案内いたします</p>
+        </div>
+    </div>
+
+<div style="text-align: center; margin: 20px 0;">
+    <img src="image1.jpg" alt="計量台の写真" style="max-width: 100%; height: auto; border-radius: 6px;">
+</div>
+
+
+    <!-- メインコンテンツ -->
+    <section>
+        <div class="container">
+            <h2 class="section-title">スクラップお持ち込みの流れ</h2>
+            <p style="text-align: center; margin-bottom: 40px; color: #666;">事前の予約は不要です。営業時間内に直接お越しください。</p>
+
+            <div class="guide-container">
+                
+                <!-- STEP 1 -->
+                <div class="step-block">
+                    <div class="step-badge-wrap">
+                        <span class="step-badge">STEP 01</span>
+                    </div>
+                    <div class="step-content">
+                        <h3>ご来社</h3>
+                        <p>トラックに荷物を積んだ状態で、そのまま敷地内のトラックスケール（大きな計量台）の上にゆっくりとお乗りください。</p>
+                        
+                        <div class="info-box">
+                            <div class="info-box-title">■ ポイント</div>
+                            <p>計量台に乗り「1回目の計量（総重量の測定）」を行います。スタッフがブザーを鳴らすまで車内でお待ちください。</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- STEP 2 -->
+                <div class="step-block">
+                    <div class="step-badge-wrap">
+                        <span class="step-badge">STEP 02</span>
+                    </div>
+                    <div class="step-content">
+                        <h3>荷下ろし（誘導・作業）</h3>
+                        <p>1回目の計量が終わりましたら、1⃣の場所までお進みください。スタッフが資材を確認後、荷下ろし場所をご案内いたします。</p>
+                        
+                        <div class="info-box">
+                            <div class="info-box-title">■ ポイント</div>
+                            <p>重い荷物や大量のスクラップは、当社の重機やスタッフが荷下ろしをお手伝いいたしますので、不慣れな方もご安心ください。</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- STEP 3 -->
+                <div class="step-block">
+                    <div class="step-badge-wrap">
+                        <span class="step-badge">STEP 03</span>
+                    </div>
+                    <div class="step-content">
+                        <h3>空車での再計量</h3>
+                        <p>荷下ろしが完了しましたら、再度トラックスケール（計量台）の上に空になったお車をお乗せください。「2回目の計量（車輌のみの重量測定）」を行います。ブザーが鳴るまでお待ちください。</p>
+                        
+                        <div class="info-box">
+                            <div class="info-box-title">■ 計算方法</div>
+                            <p><strong>【1回目の総重量】 － 【2回目の空車重量】 ＝ 【お引き取りしたスクラップの純粋な重量】</strong> として正確に算出されます。</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- STEP 4 -->
+                <div class="step-block">
+                    <div class="step-badge-wrap">
+                        <span class="step-badge">STEP 04</span>
+                    </div>
+                    <div class="step-content">
+                        <h3>受付・お支払い（ご精算）</h3>
+                        <p>計量がすべて完了しましたら、トラックを端へ移動させ、計量所窓口までお越しください。計量証明書（伝票）を発行いたします。</p>
+                        <p>買い取り対象の品目・重量に応じた金額を、その場で現金にてお支払い（ご精算）いたします。</p>
+                        
+                        <div class="alert-box">
+                            <div class="alert-box-title">■ ご注意</div>
+                            <p class="alert-text">※金属の買い取りにあたり、法律に基づき「身分証明書（運転免許証・保険証など）」のご提示をお願いする場合がございます。お持ち込みの際は必ずご持参ください。</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- トップへ戻るボタン -->
+            <div class="btn-wrap">
+                <a href="top.html" class="btn">トップページへ戻る</a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- フッター -->
+    <footer>
+        <p>&copy; 2026 株式会社 白井鋼業 All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>

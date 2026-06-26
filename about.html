@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>株式会社 白井鋼業</title>
+    <style>
+        /* ベーススタイル */
+        html {
+            scroll-behavior: smooth;
+        }
+        :root {
+            --primary-color: #0f2b5c; /* 白井鋼業様の軸となる「深いロイヤルブルー」 */
+            --secondary-color: #1d4ed8; /* アクセントとなる鮮やかな青 */
+            --accent-color: #60a5fa; /* 暗い背景でもハッキリ見える明るい青 */
+            --alert-color: #e11d48; /* 注意書き用のハッキリした赤 */
+            --dark-color: #1e293b; /* 通常文字用の濃いグレー（ほぼ黒） */
+            --light-color: #f0f4f8; /* 薄い背景用の爽やかな淡いブルーグレー */
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', Meiryo, sans-serif; line-height: 1.7; color: var(--dark-color); background: #fff; }
+        a { text-decoration: none; color: inherit; transition: 0.2s; }
+        ul { list-style: none; }
+        .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+        
+        /* セクションタイトル */
+        .section-title { text-align: center; margin-bottom: 40px; font-size: 2rem; font-weight: bold; position: relative; padding-bottom: 15px; letter-spacing: 1px; color: var(--primary-color); }
+        .section-title::after { content: ''; position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); width: 50px; height: 4px; background: var(--secondary-color); border-radius: 2px; }
+        section { padding: 80px 0; }
+
+ /* ヘッダーの統一設定 */
+        header { background: #fff; box-shadow: 0 2px 10px rgba(0,0,0,0.05); position: fixed; width: 100%; top: 0; height: 75px; z-index: 100; display: flex; align-items: center; }
+        .header-wrap { display: flex; justify-content: space-between; align-items: center; width: 100%; max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+        .logo { font-weight: bold; font-size: 1.35rem; color: #0f2b5c; }
+        .nav-links { display: flex; gap: 20px; font-weight: bold; font-size: 0.95rem; }
+        .nav-links a:hover { color: #1d4ed8; }
+
+/* 修正後（例：200pxにするとかなり広くなります） */
+#about { 
+    background-color: var(--light-color); 
+    padding-top: 100px; /* ここを大きくすると上の余白が広がります */
+    padding-bottom: 80px;
+
+/* 2. アクセスセクション（上の表との距離を確保） */
+.access-section {
+    margin-top: 200px; /* ここでアクセスの上の隙間を調整します（広げたい場合は数字を大きくしてください） */
+}
+
+
+
+        /* メインビジュアル（美しいブルーグラデーション） */
+        .hero { 
+            background: linear-gradient(135deg, #0f2b5c 0%, #1e40af 100%); 
+            padding: 130px 0 80px; 
+            text-align: center; 
+            margin-top: 75px; 
+        }
+        .fade-in-up {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: popUp 1.2s ease-out forwards;
+            max-width: 500px;
+            width: 85%;
+            height: auto;
+            margin: 0 auto 35px auto;
+            display: block;
+            filter: drop-shadow(0 8px 16px rgba(0,0,0,0.25));
+        }
+        @keyframes popUp {
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* ボタン */
+        .hero-btns { display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; }
+        .btn { display: inline-block; padding: 14px 35px; font-weight: bold; border-radius: 6px; transition: 0.3s; cursor: pointer; font-size: 0.95rem; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+        .btn-corporate { background: transparent; color: #fff; border: 2px solid rgba(255,255,255,0.5); }
+        .btn-corporate:hover { background: rgba(255,255,255,0.15); border-color: #fff; }
+        .btn-individual { background: #fff; color: var(--primary-color); border: 2px solid #fff; }
+        .btn-individual:hover { background: var(--light-color); border-color: var(--light-color); }
+        .btn:hover { transform: translateY(-2px); box-shadow: 0 8px 15px rgba(0,0,0,0.2); }
+
+        /* グリッド ＆ カード（後半の見やすさを維持） */
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 25px; margin-bottom: 40px; }
+        .card { background: #fff; padding: 30px 25px; border-radius: 8px; box-shadow: 0 4px 15px rgba(15,23,42,0.04); border: 1px solid #e2e8f0; }
+        .card h3 { margin-bottom: 15px; color: var(--primary-color); font-size: 1.2rem; font-weight: bold; }
+        .step-num { display: inline-block; background: var(--secondary-color); color: #fff; width: 24px; height: 24px; text-align: center; line-height: 24px; border-radius: 50%; margin-right: 10px; font-size: 0.85rem; font-weight: bold; }
+
+        /* 注意書き（スマホでもハッキリと） */
+        .alert-text { color: var(--alert-color); font-weight: bold; margin-top: 15px; font-size: 0.95rem; background: rgba(225,29,72,0.06); padding: 12px; border-radius: 6px; border-left: 4px solid var(--alert-color); }
+
+        /* 1. 事業内容（青ベースの高コントラスト） */
+        #business { background: var(--primary-color); color: #fff; }
+        #business .section-title { color: #fff; }
+        #business .section-title::after { background: var(--accent-color); }
+        .business-card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 15px; }
+        .business-card { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12); padding: 22px; border-radius: 8px; text-align: center; font-weight: bold; color: #f8fafc; transition: 0.3s; font-size: 1rem; display: flex; align-items: center; justify-content: center; min-height: 70px; }
+        .business-card:hover { border-color: var(--accent-color); background: rgba(255,255,255,0.15); transform: translateY(-2px); }
+
+        /* 3. 取り扱い品目（スクラップ） */
+        #items { background-color: var(--light-color); }
+        .items-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+        .item-box { border: 1px solid #e2e8f0; padding: 22px; border-radius: 8px; background: #fff; box-shadow: 0 4px 10px rgba(0,0,0,0.02); transition: 0.3s; border-left: 5px solid var(--secondary-color); }
+        .item-box:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(0,0,0,0.06); }
+        .item-title { font-size: 1.2rem; font-weight: bold; color: var(--primary-color); margin-bottom: 6px; }
+        .item-desc { font-size: 0.95rem; color: #475569; }
+
+        /* 会社概要・テーブル */
+        #about { background-color: var(--light-color); }
+        .profile-table { width: 100%; border-collapse: collapse; background: #fff; box-shadow: 0 4px 12px rgba(0,0,0,0.02); border-radius: 8px; overflow: hidden; margin-bottom: 30px; }
+        .profile-table th, .profile-table td { padding: 16px; border-bottom: 1px solid #f1f5f9; text-align: left; font-size: 0.95rem; }
+        .profile-table th { width: 25%; background: #f8fafc; font-weight: bold; color: var(--primary-color); border-right: 1px solid #f1f5f9; }
+        .profile-table tr:last-child th, .profile-table tr:last-child td { border-bottom: none; }
+        
+        /* ISO認証ボックス */
+        .iso-box { background: #fff; border: 2px solid var(--secondary-color); padding: 20px; border-radius: 8px; display: flex; align-items: center; justify-content: center; gap: 15px; box-shadow: 0 4px 10px rgba(0,0,0,0.02); margin: 30px 0; }
+        .iso-badge { background: var(--secondary-color); color: #fff; padding: 5px 12px; font-weight: bold; border-radius: 4px; font-size: 0.85rem; }
+        .iso-text { font-size: 1.3rem; font-weight: bold; color: var(--primary-color); }
+
+        /* 許認可エリア */
+        .license-container { background: #fff; padding: 30px; border-radius: 8px; border-top: 5px solid var(--primary-color); box-shadow: 0 4px 12px rgba(0,0,0,0.02); }
+
+        /* アクセス */
+        .access-title { font-size: 1.35rem; font-weight: bold; color: var(--primary-color); margin-bottom: 15px; }
+        .map-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.06); margin-top: 15px; }
+        .map-container iframe { position: absolute; top: 0; left: 0; width: 100% !important; height: 100% !important; border: 0; }
+
+        /* お問い合わせエリア */
+        .contact-box { background: #fff; padding: 45px 30px; border-radius: 12px; box-shadow: 0 8px 25px rgba(15,23,42,0.06); text-align: center; border: 1px solid #e2e8f0; }
+        .tel-card { background: var(--light-color); padding: 25px 20px; border-radius: 8px; border: 2px solid var(--secondary-color); max-width: 600px; margin: 25px auto 20px auto; }
+        .tel-card label { display: block; font-size: 0.95rem; color: var(--secondary-color); font-weight: bold; margin-bottom: 8px; }
+        .tel-number { font-size: 3.2rem; font-weight: bold; color: var(--primary-color); line-height: 1.2; font-family: Arial, sans-serif; }
+        .tel-number a { color: var(--primary-color); text-decoration: none; }
+
+        .sub-contact-line { display: flex; justify-content: center; gap: 40px; flex-wrap: wrap; margin-top: 25px; font-size: 1.15rem; color: #334155; }
+        .sub-contact-line span strong { color: var(--primary-color); }
+        .email-link { color: var(--secondary-color); font-weight: bold; text-decoration: underline; }
+
+        /* フッター */
+        footer { background: var(--primary-color); color: #94a3b8; text-align: center; padding: 25px 0; font-size: 0.85rem; border-top: 4px solid var(--secondary-color); }
+
+        /* 📱 スマホ専用の表示調整（ここで見えにくさを解消） */
+        @media (max-width: 768px) {
+            .nav-links { display: none; } /* スマホではナビを非表示にしスッキリ */
+            section { padding: 55px 0; }
+            .section-title { font-size: 1.6rem; margin-bottom: 30px; }
+            
+            /* メイン画像とボタンの調整 */
+            .hero { padding: 110px 0 60px; margin-top: 75px; }
+            .fade-in-up { max-width: 90%; margin-bottom: 25px; }
+            .btn { width: 100%; max-width: 280px; padding: 14px; text-align: center; }
+            
+            /* 表（テーブル）をスマホで見やすく縦並びに */
+            .profile-table th, .profile-table td { display: block; width: 100%; border-right: none; padding: 12px 15px; }
+            .profile-table th { background: #f1f5f9; border-bottom: none; }
+            
+            /* ISOと許認可の調整 */
+            .iso-box { flex-direction: column; text-align: center; gap: 8px; padding: 15px; }
+            .iso-text { font-size: 1.1rem; }
+            .license-container { padding: 15px; }
+            
+            /* 電話番号をスマホで押しやすいサイズに */
+            .tel-number { font-size: 2.2rem; }
+            .tel-number a { pointer-events: auto; color: var(--secondary-color); text-decoration: underline; } /* スマホでは青文字にしてリンクだと分かりやすく */
+            
+            .sub-contact-line { flex-direction: column; gap: 10px; font-size: 1.05rem; align-items: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ヘッダー -->
+    <header>
+        <div class="container header-wrap">
+            <div class="logo">株式会社 白井鋼業</div>
+<nav>
+    <ul class="nav-links" id="navLinks">
+        <!-- #business とすることで id="business" のセクションへ飛びます -->
+        <li><a href="top.html#top">TOP</a></li>
+        <!-- #business とすることで id="business" のセクションへ飛びます -->
+        <li><a href="business.html">事業内容</a></li>
+        <li><a href="news.html">お知らせ</a></li>
+        <li><a href="about.html">会社概要・アクセス</a></li>
+        <li><a href="top.html#contact">問い合わせ</a></li>
+    </ul>
+</nav>
+
+        </div>
+    </header>
+
+
+
+   
+    <!-- 5. 会社概要・許認可 -->
+<section id="about">
+        <div class="container">
+            <h2 class="section-title">会社概要</h2>
+            <div class="about-wrap">
+                
+                <!-- 会社概要（基本情報） -->
+                <table class="profile-table">
+                    <tr>
+                        <th>会社名</th>
+                        <td>株式会社 白井鋼業</td>
+                    </tr>
+                    <tr>
+                        <th>所在地</th>
+                        <td>〒790-0962 愛媛県松山市枝松４丁目５−３７</td>
+                    </tr>
+                    <tr>
+                        <th>営業時間</th>
+                        <td>月～土 8:00～12:00 13:00～17:00（※日・祝は休業）</td>
+                    </tr>
+                </table>
+
+                <!-- 認証取得 ISO 14001 ボックス -->
+                <div class="iso-box">
+                    <span class="iso-badge">環境マネジメントシステム国際規格</span>
+                    <span class="iso-text">ISO 14001 認証取得</span>
+                </div>
+
+                <!-- 取得許可 -->
+                <div class="license-container">
+                    <h3 style="margin-bottom: 20px; font-size: 1.25rem; font-weight:bold; color: var(--primary-color);">■ 取得許可一覧</h3>
+                    <table class="profile-table" style="box-shadow: none; margin-bottom: 0;">
+                        <tr><th>古物商許可</th><td>愛媛県公安委員会 第821070002503号</td></tr>
+                        <tr><th>産業廃棄物収集運搬業</th><td>愛媛県 第3802106601号 / 松山市 第8910106601号</td></tr>
+                        <tr><th>特別管理産業廃棄物収集運搬業</th><td>愛媛県 第3852106601号 / 松山市 第8960106601号</td></tr>
+                        <tr><th>産業廃棄物処分業</th><td>松山市 第8920106601号（中間処理）</td></tr>
+                        <tr><th>一般産業廃棄物収集運搬業</th><td>松山市 第20050428179号</td></tr>
+                        <tr><th>自動車リサイクル関連許可</th><td>解体業：松山市 第20893000099号<br>引取業：松山市 第20891000099号<br>回収業：松山市 第20892000099号<br>破砕業：松山市 第20894000099号</td></tr>
+                        <tr><th>フロン類回収業許可</th><td>第一種フロン類回収業：愛媛県 第1-0288号<br>第二種フロン類回収業：愛媛県 第3-0099号</td></tr>
+                        <tr><th>特定製品取引業許可</th><td>第二種特定製品取引業：愛媛県 第2-1046号</td></tr>
+                    </table>
+                </div>
+
+
+               <!-- アクセス＆Googleマップ -->
+<section id="about">
+        <div class="container">
+            <h2 class="section-title">アクセス</h2>
+            <div class="about-wrap">
+                    <div class="map-container">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3931.378990721318!2d132.7812242761702!3d33.831172629370386!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x354fe5fd306ce863%3A0xf40fdbd96e90636!2zKOagqinnmb3kupXpi7zmpa0!5e1!3m2!1sja!2sjp!4v1782179105269!5m2!1sja!2sjp" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- フッター -->
+<footer style="background-color: #0f2b5c; color: #94a3b8; text-align: center; padding: 30px 0; border-top: 4px solid #1d4ed8; margin-top: 50px; font-size: 0.85rem;">
+    <p>&copy; 2026 株式会社 白井鋼業 All Rights Reserved.</p>
+</footer>
+
+</body>
+</html>
