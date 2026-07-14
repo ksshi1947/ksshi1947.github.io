@@ -25,6 +25,12 @@
         h1 { color: #0f2b5c; margin-bottom: 30px; }
         .news-list { border-top: 2px solid #0f2b5c; }
         .news-item { padding: 20px 0; border-bottom: 1px solid #e2e8f0; }
+　　　　.news-image {
+            display: block;      /* レイアウトを安定させる */
+            max-width: 100%;     /* 横幅がスマホ画面を絶対に突き抜けないようにする */
+            height: auto !important; /* ★最重要！縦横比を崩さず、自動で高さを合わせる */
+            margin: 15px auto 0; /* カレンダーを中央に寄せて、上に少し隙間を作る */
+        }
         .date { color: #64748b; font-size: 0.9rem; display: block; margin-bottom: 5px; }
         
         /* --- フッター（統一版） --- */
