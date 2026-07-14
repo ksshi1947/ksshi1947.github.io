@@ -32,6 +32,10 @@
             margin: 15px auto 0; /* カレンダーを中央に寄せて、上に少し隙間を作る */
         }
         .date { color: #64748b; font-size: 0.9rem; display: block; margin-bottom: 5px; }
+
+        /* スマホ用メニューボタン */
+        .menu-btn { display: none; flex-direction: column; justify-content: space-between; width: 30px; height: 20px; background: transparent; border: none; cursor: pointer; z-index: 110; }
+        .menu-btn span { width: 100%; height: 3px; background-color: var(--primary-color); border-radius: 2px; transition: all 0.3s ease; }
         
         /* --- フッター（統一版） --- */
         footer { background: #0f2b5c; color: #94a3b8; text-align: center; padding: 30px 0; margin-top: 50px; font-size: 0.85rem; border-top: 4px solid #1d4ed8; }
