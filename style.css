@@ -1,0 +1,386 @@
+/* ==========================================
+   株式会社 白井鋼業 共通＆メインCSS (style.css)
+   ========================================== */
+
+/* ベーススタイル */
+html {
+    scroll-behavior: smooth;
+}
+:root {
+    --primary-color: #0f2b5c;   /* 軸となる「深いロイヤルブルー」 */
+    --secondary-color: #1d4ed8; /* アクセントとなる鮮やかな青 */
+    --accent-color: #60a5fa;    /* 暗い背景でもハッキリ見える明るい青 */
+    --alert-color: #e11d48;     /* 注意書き用のハッキリした赤 */
+    --dark-color: #1e293b;      /* 通常文字用の濃いグレー（ほぼ黒） */
+    --light-color: #f0f4f8;     /* 薄い背景用の爽やかな淡いブルーグレー */
+    --border-color: #e2e8f0;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { 
+    font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', Meiryo, sans-serif; 
+    line-height: 1.7; 
+    color: var(--dark-color); 
+    background: #fff; 
+}
+a { text-decoration: none; color: inherit; transition: 0.2s; }
+ul { list-style: none; }
+.container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+
+/* セクションタイトル */
+.section-title { text-align: center; margin-bottom: 40px; font-size: 2rem; font-weight: bold; position: relative; padding-bottom: 15px; letter-spacing: 1px; color: var(--primary-color); }
+.section-title::after { content: ''; position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); width: 50px; height: 4px; background: var(--secondary-color); border-radius: 2px; }
+section { padding: 80px 0; }
+
+/* ------------------------------------------
+   ヘッダー (半透明ガラスモーフィズム対応)
+   ------------------------------------------ */
+header { 
+    background: rgba(255, 255, 255, 0.95); 
+    backdrop-filter: blur(5px); 
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05); 
+    position: fixed; 
+    width: 100%; 
+    top: 0; 
+    left: 0;
+    z-index: 100; 
+}
+.header-wrap { 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    height: 75px; 
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+    position: relative; 
+}
+.logo { 
+    font-weight: bold; 
+    font-size: 1.35rem; 
+    color: var(--primary-color); 
+    letter-spacing: 0.5px; 
+    z-index: 110; 
+}
+.logo a { color: var(--primary-color); }
+
+/* PC用ナビゲーション */
+.nav-links { display: flex; gap: 20px; font-weight: bold; font-size: 0.95rem; }
+.nav-links a { color: #334155; }
+.nav-links a:hover { color: var(--secondary-color); }
+
+/* スマホ用メニューボタン */
+.menu-btn { 
+    display: none; 
+    flex-direction: column; 
+    justify-content: space-between; 
+    width: 30px; 
+    height: 20px; 
+    background: transparent; 
+    border: none; 
+    cursor: pointer; 
+    z-index: 110; 
+}
+.menu-btn span { 
+    width: 100%; 
+    height: 3px; 
+    background-color: var(--primary-color); 
+    border-radius: 2px; 
+    transition: all 0.3s ease; 
+}
+
+/* ------------------------------------------
+   メインビジュアル & ボタン
+   ------------------------------------------ */
+.hero { background: #f8fafc; padding: 150px 0 100px; text-align: center; margin-top: 75px; }
+.fade-in-up { 
+    opacity: 0; 
+    transform: translateY(20px); 
+    animation: popUp 1.2s ease-out forwards; 
+    max-width: 900px; 
+    width: 90%; 
+    height: auto; 
+    margin: 0 auto; 
+    display: block; 
+    filter: drop-shadow(0 8px 16px rgba(0,0,0,0.25)); 
+    border-radius: 8px;
+}
+@keyframes popUp { to { opacity: 1; transform: translateY(0); } }
+
+.hero-btns { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-top: 35px; }
+.btn { display: inline-block; padding: 14px 35px; font-weight: bold; border-radius: 6px; transition: 0.3s; cursor: pointer; font-size: 0.95rem; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+.btn-corporate { background: transparent; color: #fff; border: 2px solid rgba(255,255,255,0.5); }
+.btn-corporate:hover { background: rgba(255,255,255,0.15); border-color: #fff; }
+.btn-individual { background: #fff; color: var(--primary-color); border: 2px solid #fff; }
+.btn-individual:hover { background: var(--light-color); border-color: var(--light-color); }
+.btn:hover { transform: translateY(-2px); box-shadow: 0 8px 15px rgba(0,0,0,0.2); }
+
+/* ------------------------------------------
+   事業内容セクション
+   ------------------------------------------ */
+#business { background: var(--primary-color); color: #fff; }
+#business .section-title { color: #fff; }
+#business .section-title::after { background: var(--accent-color); }
+
+.business-card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 15px; margin-bottom: 40px; }
+.business-card { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12); padding: 22px; border-radius: 8px; text-align: center; font-weight: bold; color: #f8fafc; font-size: 1rem; display: flex; align-items: center; justify-content: center; min-height: 70px; }
+
+/* 枠組み下の「1つボタン」 */
+.business-btn-wrap { text-align: center; margin-top: 20px; }
+.btn-business-detail { display: inline-block; background: #fff; color: var(--primary-color); padding: 16px 50px; border-radius: 30px; font-weight: bold; font-size: 1.05rem; transition: 0.3s; box-shadow: 0 4px 15px rgba(0,0,0,0.2); }
+.btn-business-detail:hover { background: var(--light-color); transform: translateY(-3px); box-shadow: 0 8px 20px rgba(0,0,0,0.3); }
+
+/* 個人向けおまけテキスト */
+.individual-note { text-align: center; margin-top: 25px; font-size: 0.85rem; color: #94a3b8; }
+
+/* ------------------------------------------
+   下層ページ用コンポーネント (共通枠組み)
+   ------------------------------------------ */
+/* カード・グリッド */
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 25px; margin-bottom: 40px; }
+.card { background: #fff; padding: 30px 25px; border-radius: 8px; box-shadow: 0 4px 15px rgba(15,23,42,0.04); border: 1px solid #e2e8f0; }
+.card h3 { margin-bottom: 15px; color: var(--primary-color); font-size: 1.2rem; font-weight: bold; }
+.step-num { display: inline-block; background: var(--secondary-color); color: #fff; width: 24px; height: 24px; text-align: center; line-height: 24px; border-radius: 50%; margin-right: 10px; font-size: 0.85rem; font-weight: bold; }
+
+/* 注意書き */
+.alert-text { color: var(--alert-color); font-weight: bold; margin-top: 15px; font-size: 0.95rem; background: rgba(225,29,72,0.06); padding: 12px; border-radius: 6px; border-left: 4px solid var(--alert-color); }
+
+/* 取り扱い品目 */
+#items { background-color: var(--light-color); }
+.items-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+.item-box { border: 1px solid #e2e8f0; padding: 22px; border-radius: 8px; background: #fff; box-shadow: 0 4px 10px rgba(0,0,0,0.02); transition: 0.3s; border-left: 5px solid var(--secondary-color); }
+.item-box:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(0,0,0,0.06); }
+.item-title { font-size: 1.2rem; font-weight: bold; color: var(--primary-color); margin-bottom: 6px; }
+.item-desc { font-size: 0.95rem; color: #475569; }
+
+/* 会社概要テーブル */
+#about { background-color: var(--light-color); padding-top: 100px; padding-bottom: 80px; }
+.profile-table { width: 100%; border-collapse: collapse; background: #fff; box-shadow: 0 4px 12px rgba(0,0,0,0.02); border-radius: 8px; overflow: hidden; margin-bottom: 30px; }
+.profile-table th, .profile-table td { padding: 16px; border-bottom: 1px solid #f1f5f9; text-align: left; font-size: 0.95rem; }
+.profile-table th { width: 25%; background: #f8fafc; font-weight: bold; color: var(--primary-color); border-right: 1px solid #f1f5f9; }
+.profile-table tr:last-child th, .profile-table tr:last-child td { border-bottom: none; }
+
+/* ISO認証 */
+.iso-box { background: #fff; border: 2px solid var(--secondary-color); padding: 20px; border-radius: 8px; display: flex; align-items: center; justify-content: center; gap: 15px; box-shadow: 0 4px 10px rgba(0,0,0,0.02); margin: 30px 0; }
+.iso-badge { background: var(--secondary-color); color: #fff; padding: 5px 12px; font-weight: bold; border-radius: 4px; font-size: 0.85rem; }
+.iso-text { font-size: 1.3rem; font-weight: bold; color: var(--primary-color); }
+
+/* 許認可エリア */
+.license-container { background: #fff; padding: 30px; border-radius: 8px; border-top: 5px solid var(--primary-color); box-shadow: 0 4px 12px rgba(0,0,0,0.02); }
+
+/* アクセス */
+.access-section { margin-top: 200px; }
+.access-title { font-size: 1.35rem; font-weight: bold; color: var(--primary-color); margin-bottom: 15px; }
+.map-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.06); margin-top: 15px; }
+.map-container iframe { position: absolute; top: 0; left: 0; width: 100% !important; height: 100% !important; border: 0; }
+
+/* ------------------------------------------
+   お問い合わせ ＆ フッター
+   ------------------------------------------ */
+.contact-box { background: #fff; padding: 45px 30px; border-radius: 12px; box-shadow: 0 8px 25px rgba(15,23,42,0.06); text-align: center; border: 1px solid #e2e8f0; }
+.tel-card { background: var(--light-color); padding: 25px 20px; border-radius: 8px; border: 2px solid var(--secondary-color); max-width: 600px; margin: 25px auto 20px auto; }
+.tel-card label { display: block; font-size: 0.95rem; color: var(--secondary-color); font-weight: bold; margin-bottom: 8px; }
+.tel-number { font-size: 3.2rem; font-weight: bold; color: var(--primary-color); line-height: 1.2; font-family: Arial, sans-serif; }
+.tel-number a { color: var(--primary-color); text-decoration: none; }
+.sub-contact-line { display: flex; justify-content: center; gap: 40px; flex-wrap: wrap; margin-top: 25px; font-size: 1.15rem; color: #334155; }
+.sub-contact-line span strong { color: var(--primary-color); }
+.email-link { color: var(--secondary-color); font-weight: bold; text-decoration: underline; }
+
+footer { background: var(--primary-color); color: #94a3b8; text-align: center; padding: 25px 0; font-size: 0.85rem; border-top: 4px solid var(--secondary-color); }
+
+/* ------------------------------------------
+   📱 スマホ専用表示調整 (768px以下)
+   ------------------------------------------ */
+@media (max-width: 768px) {
+    section { padding: 55px 0; }
+    .section-title { font-size: 1.6rem; margin-bottom: 30px; }
+    
+    .hero { padding: 110px 0 60px; margin-top: 75px; }
+    .hero-btns { flex-direction: column; align-items: center; gap: 15px; margin-top: 25px; }
+    .btn { width: 100%; max-width: 280px; padding: 14px; text-align: center; }
+
+    .btn-business-detail { width: 100%; max-width: 320px; padding: 15px 20px; }
+
+    .menu-btn { display: flex; }
+    .nav-links { display: none; flex-direction: column; position: absolute; top: 75px; left: 0; width: 100%; background: #fff; padding: 20px; box-shadow: 0 10px 15px rgba(0,0,0,0.1); gap: 15px; text-align: center; border-top: 1px solid var(--border-color); }
+    .nav-links.active { display: flex; }
+    .menu-btn.active span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+    .menu-btn.active span:nth-child(2) { opacity: 0; }
+    .menu-btn.active span:nth-child(3) { transform: translateY(-9px) rotate(-45deg); }
+    
+    .profile-table th, .profile-table td { display: block; width: 100%; border-right: none; padding: 12px 15px; }
+    .profile-table th { background: #f1f5f9; border-bottom: none; }
+    
+    .iso-box { flex-direction: column; text-align: center; gap: 8px; padding: 15px; }
+    .iso-text { font-size: 1.1rem; }
+    .license-container { padding: 15px; }
+
+    .tel-number { font-size: 2.2rem; }
+    .tel-number a { pointer-events: auto; color: var(--secondary-color); text-decoration: underline; }
+    .sub-contact-line { flex-direction: column; gap: 10px; font-size: 1.05rem; align-items: center; }
+
+}
+
+/* ==========================================
+   お知らせページ（news.html）専用スタイル
+   ========================================== */
+
+/* --- 全体の位置調整（ヘッダーに被らないように） --- */
+body {
+    padding-top: 75px;
+}
+
+/* --- コンテンツ枠 --- */
+.container { 
+    max-width: 800px; 
+    margin: 40px auto; 
+    padding: 0 20px; 
+}
+
+.container h1 { 
+    color: #0f2b5c; 
+    margin-bottom: 30px; 
+    font-size: 1.8rem;
+}
+
+/* --- お知らせ記事リスト --- */
+.news-list { 
+    border-top: 2px solid #0f2b5c; 
+}
+
+.news-item { 
+    padding: 20px 0; 
+    border-bottom: 1px solid #e2e8f0; 
+}
+
+.news-item h3 {
+    font-size: 1.15rem;
+    color: #1e293b;
+    margin-bottom: 10px;
+}
+
+.news-image { 
+    display: block; 
+    max-width: 100%; 
+    height: auto !important; 
+    margin: 15px auto 0; 
+    border-radius: 4px;
+}
+
+.date { 
+    color: #64748b; 
+    font-size: 0.9rem; 
+    display: block; 
+    margin-bottom: 5px; 
+}
+
+/* ==========================================
+   3. 初めて訪問される方へ（visit.html）専用
+   ========================================== */
+.page-header { background: linear-gradient(rgba(26, 54, 93, 0.8), rgba(26, 54, 93, 0.9)), url('https://picsum.photos/1200/400') no-repeat center center/cover; padding: 80px 0 50px 0; text-align: center; color: #fff; }
+.page-header h1 { font-size: 2.2rem; margin-bottom: 15px; font-weight: bold; }
+.guide-container { background: #fff; border-radius: 8px; padding: 40px 30px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); margin-bottom: 40px; border: 1px solid #e2e8f0; }
+.step-block { display: flex; gap: 30px; margin-bottom: 40px; padding-bottom: 40px; border-bottom: 1px solid #e2e8f0; }
+.step-block:last-child { margin-bottom: 0; padding-bottom: 0; border-bottom: none; }
+.step-badge-wrap { flex-shrink: 0; text-align: center; width: 150px; }
+.step-badge { background: var(--primary-color); color: #fff; font-size: 1.1rem; font-weight: bold; padding: 8px 20px; border-radius: 4px; display: inline-block; width: 100%; margin-bottom: 15px; }
+.step-left-img { width: 100%; height: auto; border-radius: 6px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); display: block; }
+.step-content { flex-grow: 1; }
+.step-content h3 { font-size: 1.4rem; color: var(--primary-color); margin-bottom: 15px; font-weight: bold; }
+.info-box { background: #fff; border: 1px solid #e2e8f0; border-left: 5px solid var(--secondary-color); padding: 20px; border-radius: 0 8px 8px 0; margin-top: 15px; }
+.info-box-title { font-weight: bold; color: var(--secondary-color); margin-bottom: 5px; }
+.alert-box { background: #fff5f5; border: 1px solid #fed7d7; border-left: 5px solid var(--alert-color); padding: 20px; border-radius: 0 8px 8px 0; margin-top: 15px; }
+.alert-box-title, .alert-text { font-weight: bold; color: var(--alert-color); }
+
+
+/* === 6. 会社概要（about.html） === */
+.profile-table { width: 100%; border-collapse: collapse; margin-bottom: 30px; background: #fff; }
+.profile-table th, .profile-table td { padding: 14px; border: 1px solid var(--border); text-align: left; }
+.profile-table th { background: #f8fafc; color: var(--primary); width: 25%; }
+.iso-box { border: 2px solid var(--secondary); padding: 15px; text-align: center; border-radius: 6px; margin: 25px 0; font-weight: bold; }
+.map-container iframe { width: 100%; height: 400px; border: 0; border-radius: 8px; }
+
+/* about.html だけの余白調整（他ページには影響しません） */
+.profile-table {
+    margin-top: 0;
+}
+section h2.section-title:first-child {
+    margin-top: -70px !important;
+}
+
+
+/* ==========================================
+   事業内容（business）の一番上をヘッダーの下に押し出す
+   ========================================== */
+
+/* 1. ページを開いた時やリンクで飛んだ時にヘッダーと被らないように余白を作る */
+#business {
+    padding-top: 100px !important; /* ヘッダー(75px)＋ゆとり(25px) */
+    scroll-margin-top: 20px;
+}
+
+/* 2. 念のため文字の位置関係を前面に整理 */
+#business .container {
+    position: relative;
+    z-index: 1;
+}
+
+
+/* ==========================================
+   ヘッダーと見切れの根本修正
+   ========================================== */
+
+/* 1. ヘッダーの高さをスッキリ75pxに固定 */
+header {
+    height: 75px !important;
+}
+
+/* 2. 全ページのbody上部にヘッダー分のスキマをしっかり確保 */
+body {
+    padding-top: 75px !important;
+}
+
+/* 3. 「法人サービス」などセクションの上の不要なネガティブマージン（マイナス指定）をリセット */
+section, 
+.container, 
+section h2.section-title:first-child {
+    margin-top: 0 !important;
+}
+
+/* 4. ページ内リンクで「事業内容」に飛んだ時も見切れないようにスクロール位置を調整 */
+#business {
+    scroll-margin-top: 75px;
+    padding-top: 40px !important;
+}
+
+/* ==========================================
+   見出しデザインの統一（中央寄せ＋短い青下線）
+   ========================================== */
+.section-title {
+    text-align: center !important;
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #0f2b5c;
+    margin-bottom: 40px;
+    position: relative;
+    padding-bottom: 15px;
+}
+
+/* 中央の短い青い下線 */
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px;       /* 下線の長さ */
+    height: 3px;       /* 下線の太さ */
+    background-color: #1d4ed8; /* 青色 */
+    border-radius: 2px;
+}
+
+/* お知らせリストの上の長い横線を消す */
+.news-list {
+    border-top: none !important;
+}
+
+

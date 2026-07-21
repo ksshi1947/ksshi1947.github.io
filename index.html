@@ -1,141 +1,36 @@
-<!DOCTYPE html>
+	<!DOCTYPE html>
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>株式会社 白井鋼業</title>
-    <style>
-        /* ベーススタイル */
-        html {
-            scroll-behavior: smooth;
-        }
-        :root {
-            --primary-color: #0f2b5c; 
-            --secondary-color: #1d4ed8; 
-            --accent-color: #60a5fa; 
-            --alert-color: #e11d48; 
-            --dark-color: #1e293b; 
-            --light-color: #f0f4f8; 
-            --border-color: #e2e8f0;
-        }
-        * { box-sizing: border-box; margin: 0; padding: 0; }
-        body { font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', Meiryo, sans-serif; line-height: 1.7; color: var(--dark-color); background: #fff; }
-        a { text-decoration: none; color: inherit; transition: 0.2s; }
-        ul { list-style: none; }
-        .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
-        
-        /* セクションタイトル */
-        .section-title { text-align: center; margin-bottom: 40px; font-size: 2rem; font-weight: bold; position: relative; padding-bottom: 15px; letter-spacing: 1px; color: var(--primary-color); }
-        .section-title::after { content: ''; position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); width: 50px; height: 4px; background: var(--secondary-color); border-radius: 2px; }
-        section { padding: 80px 0; }
+<link rel="stylesheet" href="style.css">
+   </head>
 
-        /* ヘッダー */
-        header { background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(5px); box-shadow: 0 2px 10px rgba(0,0,0,0.05); position: fixed; width: 100%; top: 0; z-index: 100; }
-        .header-wrap { display: flex; justify-content: space-between; align-items: center; height: 75px; position: relative; }
-        .logo { font-weight: bold; font-size: 1.35rem; color: var(--primary-color); letter-spacing: 0.5px; z-index: 110; }
-        .logo a { color: var(--primary-color); }
-        
-        /* PC用ナビゲーション */
-        .nav-links { display: flex; gap: 20px; font-weight: bold; font-size: 0.95rem; }
-        .nav-links a { color: #334155; }
-        .nav-links a:hover { color: var(--secondary-color); }
-
-        /* スマホ用メニューボタン */
-        .menu-btn { display: none; flex-direction: column; justify-content: space-between; width: 30px; height: 20px; background: transparent; border: none; cursor: pointer; z-index: 110; }
-        .menu-btn span { width: 100%; height: 3px; background-color: var(--primary-color); border-radius: 2px; transition: all 0.3s ease; }
-
-        /* メインビジュアル */
-        .hero { background: #f8fafc; padding: 150px 0 100px; text-align: center; margin-top: 75px; }
-        .fade-in-up { opacity: 0; transform: translateY(20px); animation: popUp 1.2s ease-out forwards; max-width: 900px; width: 90%; height: auto; margin: 0 auto; display: block; filter: drop-shadow(0 8px 16px rgba(0,0,0,0.25)); border-radius: 8px;}
-        @keyframes popUp { to { opacity: 1; transform: translateY(0); } }
-
-        /* メインビジュアル内のボタン */
-        .hero-btns { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-top: 35px; }
-        .btn { display: inline-block; padding: 14px 35px; font-weight: bold; border-radius: 6px; transition: 0.3s; cursor: pointer; font-size: 0.95rem; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
-        .btn-corporate { background: transparent; color: #fff; border: 2px solid rgba(255,255,255,0.5); }
-        .btn-corporate:hover { background: rgba(255,255,255,0.15); border-color: #fff; }
-        .btn-individual { background: #fff; color: var(--primary-color); border: 2px solid #fff; }
-        .btn-individual:hover { background: var(--light-color); border-color: var(--light-color); }
-        .btn:hover { transform: translateY(-2px); box-shadow: 0 8px 15px rgba(0,0,0,0.2); }
-
-        /* 1. 事業内容（枠組み復活＆1つボタン） */
-        #business { background: var(--primary-color); color: #fff; }
-        #business .section-title { color: #fff; }
-        #business .section-title::after { background: var(--accent-color); }
-        
-        .business-card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 15px; margin-bottom: 40px; }
-        .business-card { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12); padding: 22px; border-radius: 8px; text-align: center; font-weight: bold; color: #f8fafc; font-size: 1rem; display: flex; align-items: center; justify-content: center; min-height: 70px; }
-        
-        /* 枠組み下の「1つボタン」 */
-        .business-btn-wrap { text-align: center; margin-top: 20px; }
-        .btn-business-detail { display: inline-block; background: #fff; color: var(--primary-color); padding: 16px 50px; border-radius: 30px; font-weight: bold; font-size: 1.05rem; transition: 0.3s; box-shadow: 0 4px 15px rgba(0,0,0,0.2); }
-        .btn-business-detail:hover { background: var(--light-color); transform: translateY(-3px); box-shadow: 0 8px 20px rgba(0,0,0,0.3); }
-
-        /* 個人向けおまけテキスト */
-        .individual-note { text-align: center; margin-top: 25px; font-size: 0.85rem; color: #94a3b8; }
-
-        /* お問い合わせエリア */
-        .contact-box { background: #fff; padding: 45px 30px; border-radius: 12px; box-shadow: 0 8px 25px rgba(15,23,42,0.06); text-align: center; border: 1px solid #e2e8f0; }
-        .tel-card { background: var(--light-color); padding: 25px 20px; border-radius: 8px; border: 2px solid var(--secondary-color); max-width: 600px; margin: 25px auto 20px auto; }
-        .tel-card label { display: block; font-size: 0.95rem; color: var(--secondary-color); font-weight: bold; margin-bottom: 8px; }
-        .tel-number { font-size: 3.2rem; font-weight: bold; color: var(--primary-color); line-height: 1.2; font-family: Arial, sans-serif; }
-        .tel-number a { color: var(--primary-color); text-decoration: none; }
-        .sub-contact-line { display: flex; justify-content: center; gap: 40px; flex-wrap: wrap; margin-top: 25px; font-size: 1.15rem; color: #334155; }
-        .sub-contact-line span strong { color: var(--primary-color); }
-        .email-link { color: var(--secondary-color); font-weight: bold; text-decoration: underline; }
-
-        /* フッター */
-        footer { background: var(--primary-color); color: #94a3b8; text-align: center; padding: 25px 0; font-size: 0.85rem; border-top: 4px solid var(--secondary-color); }
-
-        /* 📱 スマホ専用の表示調整 */
-        @media (max-width: 768px) {
-            section { padding: 55px 0; }
-            .section-title { font-size: 1.6rem; margin-bottom: 30px; }
-            
-            .hero { padding: 110px 0 60px; margin-top: 75px; }
-            .hero-btns { flex-direction: column; align-items: center; gap: 15px; margin-top: 25px; }
-            .btn { width: 100%; max-width: 280px; padding: 14px; text-align: center; }
-
-            .btn-business-detail { width: 100%; max-width: 320px; padding: 15px 20px; }
-
-            .menu-btn { display: flex; }
-            .nav-links { display: none; flex-direction: column; position: absolute; top: 75px; left: 0; width: 100%; background: #fff; padding: 20px; box-shadow: 0 10px 15px rgba(0,0,0,0.1); gap: 15px; text-align: center; border-top: 1px solid var(--border-color); }
-            .nav-links.active { display: flex; }
-            .menu-btn.active span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
-            .menu-btn.active span:nth-child(2) { opacity: 0; }
-            .menu-btn.active span:nth-child(3) { transform: translateY(-9px) rotate(-45deg); }
-            
-            .tel-number { font-size: 2.2rem; }
-            .tel-number a { pointer-events: auto; color: var(--secondary-color); text-decoration: underline; }
-            .sub-contact-line { flex-direction: column; gap: 10px; font-size: 1.05rem; align-items: center; }
-        }
-    </style>
-</head>
 <body>
 
-    <header>
-        <div class="container header-wrap">
-            <div class="logo"><a href="index.html">株式会社 白井鋼業</a></div>
-            
-            <button class="menu-btn" id="menuBtn">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
+   <header>
+    <div class="header-wrap">
+        <div class="logo"><a href="index.html">株式会社 白井鋼業</a></div>
+        
+        <!-- スマホ用メニューボタン -->
+        <button class="menu-btn" id="menuBtn">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
 
-           <nav>
-    <ul class="nav-links" id="navLinks">
-        <li><a href="index.html#top">TOP</a></li>
-        <!-- #business とすることで id="business" のセクションへ飛びます -->
-        <li><a href="#business">事業内容</a></li>
-        <li><a href="news.html">お知らせ</a></li>
-        <li><a href="about.html">会社概要・アクセス</a></li>
-        <!-- #contact とすることで id="contact" のセクションへ飛びます -->
-        <li><a href="#contact">問い合わせ</a></li>
-    </ul>
-</nav>
-        </div>
-    </header>
+        <nav>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">TOP</a></li>
+                <li><a href="#business">事業内容</a></li>
+                <li><a href="news.html">お知らせ</a></li>
+                <li><a href="about.html">会社概要・アクセス</a></li>
+                <li><a href="#contact">問い合わせ</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
 
     <section class="hero">
         <div class="hero-content container">
@@ -162,10 +57,10 @@
             </div>
 
             <div class="business-btn-wrap">
-                <a href="business.html" class="btn-business-detail">法人向け事業の詳細はこちら</a>
+                <a href="business.html" class="btn-business-detail">詳細はこちら</a>
             </div>
 
-            <p class="individual-note">個人のお客様は、鉄・非鉄金属のみ無料で回収いたします。営業時間内に直接お持ち込みください。※家電リサイクル法対象品目は、弊社では回収できません。ご心配な場合は、お電話でご相談ください。</p>
+            <p class="individual-note">個人のお客様は、鉄・非鉄金属のみ無料で回収いたします。営業時間内に直接お持ち込みください。<br>※家電リサイクル法対象品目は、弊社では回収できません。ご心配な場合は、お電話でご相談ください。</p>
             
         </div>
     </section>
@@ -183,7 +78,7 @@
                 </li>
                 <li style="padding: 15px 0; border-bottom: 1px solid #f1f5f9; display: flex; gap: 20px;">
                     <span style="color: #64748b; font-weight: bold; min-width: 100px;">2026.07.01</span>
-                    <span style="color: var(--dark-color);">ホームページを作成しました。</span>
+                    <span style="color: var(--dark-color);">ホームページを公開しました</span>
                 </li>
             </ul>
             <div style="text-align: center; margin-top: 25px;">
@@ -210,7 +105,7 @@
                     <span><strong>E-MAIL：</strong><a href="mailto:siraikogyo@sirius.ocn.ne.jp" class="email-link">siraikogyo@sirius.ocn.ne.jp</a></span>
                 </div>
 
-                <p style="margin-top: 30px; color: #64748b; font-size: 0.95rem;">受付時間: 月～土　8:00～12:00　13:00～17:00（※日祝休業）</p>
+                <p style="margin-top: 30px; color: #64748b; font-size: 0.95rem;">受付時間： 月～土 8:00～12:00、13:00～17:00（※日祝休業）</p>
             </div>
         </div>
     </section>
@@ -222,19 +117,10 @@
     <script>
         const menuBtn = document.getElementById('menuBtn');
         const navLinks = document.getElementById('navLinks');
-
         menuBtn.addEventListener('click', () => {
             menuBtn.classList.toggle('active');
             navLinks.classList.toggle('active');
         });
-
-        navLinks.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', () => {
-                menuBtn.classList.remove('active');
-                navLinks.classList.remove('active');
-            });
-        });
     </script>
-
 </body>
 </html>
