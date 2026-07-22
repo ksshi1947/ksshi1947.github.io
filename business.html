@@ -3,34 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>株式会社 白井鋼業</title>
-<link rel="stylesheet" href="style.css">
-   </head>
+    <title>事業内容 | 株式会社 白井鋼業</title>
+    <link rel="stylesheet" href="style.css">
+</head>
 <body>
 
     <!-- ヘッダー -->
     <header>
         <div class="container header-wrap">
-            <div class="logo">株式会社 白井鋼業</div>
+            <div class="logo"><a href="index.html">株式会社 白井鋼業</a></div>
+            <button class="menu-btn" id="menuBtn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
             <nav>
-    <ul class="nav-links" id="navLinks">
-        <li><a href="index.html#top">TOP</a></li>
-        <li><a href="index.html#business">事業内容</a></li>
-        <li><a href="news.html">お知らせ</a></li>
-        <li><a href="about.html">会社概要・アクセス</a></li>
-        <li><a href="index.html#contact">問い合わせ</a></li>                </ul>
-
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="index.html#top">TOP</a></li>
+                    <li><a href="business.html">事業内容</a></li>
+                    <li><a href="news.html">お知らせ</a></li>
+                    <li><a href="about.html">会社概要・アクセス</a></li>
+                    <li><a href="index.html#contact">問い合わせ</a></li>
+                </ul>
             </nav>
         </div>
     </header>
 
-    <!-- 2. 法人向け -->
-
-
+    <!-- 1. 法人向けサービス（回収・買取の流れ） -->
     <section id="corporate">
         <div class="container">
-<h2 class="section-title" style="margin-top: 50px;">法人向けサービス</h2>
-            <p style="text-align: center; margin-bottom: 35px; color: #64748b; font-size: 0.95rem;"></p>
+            <h2 class="section-title" style="margin-top: 30px;">法人向けサービス</h2>
             
             <h3 style="margin-bottom:20px; font-size: 1.3rem; font-weight:bold; color: var(--primary-color);">■ 回収・買取の流れ</h3>
             <div class="grid">
@@ -51,8 +53,118 @@
                     <p>各種法令に則りマニフェスト（産業廃棄物管理票）を発行。適正処理をお約束します。</p>
                 </div>
             </div>
-
+        </div>
     </section>
+
+ <!-- 2. 主要設備・加工工程（アコーディオン） -->
+<section id="facility" style="background-color: #f8fafc; padding: 50px 0;">
+    <div class="container">
+        <h2 class="section-title">主要設備・加工工程</h2>
+        <p style="text-align: center; margin-bottom: 30px; color: #64748b; font-size: 0.95rem;">
+            自社の豊富な大型車両と加工設備により、スピーディーかつ適正に処理を行います。
+        </p>
+
+        <div class="accordion-container">
+            <!-- 項目1：運輸 -->
+            <div class="accordion-item">
+                <button class="accordion-header">
+                    <span class="acc-title">運輸 <small>お客さまのニーズに添って機動力を発揮いたします。</small></span>
+                    <span class="acc-icon">＋</span>
+                </button>
+                <div class="accordion-content">
+                    <div class="acc-body">
+                        <div class="acc-img-grid">
+                            <div class="dummy-img">自社車両写真</div>
+                            <div class="dummy-img">重機写真</div>
+                        </div>
+                        <div class="acc-text">
+                            <h4>■ 保有車両・設備一覧</h4>
+                            <ul class="equip-list">
+                                <li>トラックスケール 80t（1台） / 50t（1台）</li>
+                                <li>25t車（2台） / 10t車[深ボディ]（7台）</li>
+                                <li>7t車（3台） / 4t車（6台） / 3t車（2台）</li>
+                                <li>マグネット付ヒアブ（3台）</li>
+                                <li>フォークリフト（5台） / 回送車（2台）</li>
+                                <li>25tラフター（1台） / ホイールローダー（1台）</li>
+                                <li>ユンボ 各種（計6台）</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 項目2：切断 -->
+            <div class="accordion-item">
+                <button class="accordion-header">
+                    <span class="acc-title">切断 <small>ギロチンで大小様々な物を規格サイズに製品化します。</small></span>
+                    <span class="acc-icon">＋</span>
+                </button>
+                <div class="accordion-content">
+                    <div class="acc-body">
+                        <div class="acc-img-grid">
+                            <div class="dummy-img">ギロチン加工写真</div>
+                            <div class="dummy-img">作業風景写真</div>
+                        </div>
+                        <div class="acc-text">
+                            <h4>■ 主要設備</h4>
+                            <ul class="equip-list">
+                                <li>ギロチンプレス機 1,000t（1台）</li>
+                                <li>クラブ式クレーン（3台）</li>
+                                <li>天井クレーン（3台）</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 項目3：圧縮 -->
+            <div class="accordion-item">
+                <button class="accordion-header">
+                    <span class="acc-title">圧縮 <small>薄い素材で空間のあるものをプレスしコンパクトに製品化します。</small></span>
+                    <span class="acc-icon">＋</span>
+                </button>
+                <div class="accordion-content">
+                    <div class="acc-body">
+                        <div class="acc-img-grid">
+                            <div class="dummy-img">プレス加工写真</div>
+                            <div class="dummy-img">保管状況写真</div>
+                        </div>
+                        <div class="acc-text">
+                            <h4>■ 主要設備</h4>
+                            <ul class="equip-list">
+                                <li>スクラッププレス機 500t（1台）</li>
+                                <li>天井クレーン（3台）</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 項目4：選別 -->
+            <div class="accordion-item">
+                <button class="accordion-header">
+                    <span class="acc-title">選別 <small>非鉄金属を解体・分別し、各種資源にリサイクルします。</small></span>
+                    <span class="acc-icon">＋</span>
+                </button>
+                <div class="accordion-content">
+                    <div class="acc-body">
+                        <div class="acc-img-grid">
+                            <div class="dummy-img">選別作業写真</div>
+                            <div class="dummy-img">スクラップ写真</div>
+                        </div>
+                        <div class="acc-text">
+                            <h4>■ 取扱非鉄金属全般</h4>
+                            <p style="font-size: 0.9rem; color: #334155; line-height: 1.6;">
+                                銅・基盤・アルミ・ステンレス・真鍮・砲金・その他
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
 
     <!-- 3. 取り扱い品目 -->
     <section id="items">
@@ -87,35 +199,30 @@
         </div>
     </section>
 
-<!-- 新規追加：初めての方へセクション -->
-
-<section id="visit-guide" style="padding: 40px 0; margin: 40px 0;">
-    <div class="container" style="text-align: center;">
-        <div style="display: inline-block; padding: 20px 40px; border: 2px solid #0f2b5c; border-radius: 8px;">
-            <a href="visit.html" style="color: #0f2b5c; font-size: 1rem; text-decoration: none; display: flex; align-items: center; gap: 12px; font-weight: bold;">
-                <span style="font-size: 1.2rem;">ⓘ</span>
-                初めてお持ち込みされる方へ：受付の流れ はこちら
-            </a>
+    <!-- 4. 初めての方へセクション -->
+    <section id="visit-guide" style="padding: 40px 0; margin: 40px 0;">
+        <div class="container" style="text-align: center;">
+            <div style="display: inline-block; padding: 20px 40px; border: 2px solid #0f2b5c; border-radius: 8px;">
+                <a href="visit.html" style="color: #0f2b5c; font-size: 1rem; text-decoration: none; display: flex; align-items: center; gap: 12px; font-weight: bold;">
+                    <span style="font-size: 1.2rem;">ⓘ</span>
+                    初めてお持ち込みされる方へ：受付の流れ はこちら
+                </a>
+            </div>
         </div>
-    </div>
-</section>
+    </section>
 
-
-   
-    <!-- 6. お問い合わせ -->
+    <!-- 5. お問い合わせ -->
     <section id="contact">
         <div class="container">
             <h2 class="section-title">お問い合わせ</h2>
             <div class="contact-box">
                 <p style="font-size: 1.1rem; color: #475569; font-weight: 500;">お見積もり・ご相談は無料です。お気軽にお問い合わせください。</p>
                 
-                <!-- お電話エリア -->
                 <div class="tel-card">
                     <label>お電話でのお問い合わせ</label>
                     <div class="tel-number"><a href="tel:0899413755">089-941-3755</a></div>
                 </div>
 
-                <!-- FAXとメール -->
                 <div class="sub-contact-line">
                     <span><strong>FAX：</strong>089-941-3350</span>
                     <span><strong>E-MAIL：</strong><a href="mailto:siraikogyo@sirius.ocn.ne.jp" class="email-link">siraikogyo@sirius.ocn.ne.jp</a></span>
@@ -131,7 +238,9 @@
         <p>&copy; 2026 株式会社 白井鋼業 All Rights Reserved.</p>
     </footer>
 
-<script>
+    <!-- アコーディオン動作用 JavaScript -->
+    <script>
+        // ハンバーガーメニュー
         const menuBtn = document.getElementById('menuBtn');
         const navLinks = document.getElementById('navLinks');
         if (menuBtn && navLinks) {
@@ -140,6 +249,15 @@
                 navLinks.classList.toggle('active');
             });
         }
+
+        // アコーディオン開閉動作
+        const accHeaders = document.querySelectorAll('.accordion-header');
+        accHeaders.forEach(header => {
+            header.addEventListener('click', () => {
+                const item = header.parentElement;
+                item.classList.toggle('active');
+            });
+        });
     </script>
 </body>
 </html>
