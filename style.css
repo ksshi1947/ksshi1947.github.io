@@ -930,13 +930,23 @@ section h2.section-title:first-child {
     border-radius: 6px;
 }
 
-/* PC表示：スクロールなしで2枚均等に並べる */
-@media (min-width: 768px) {
+/* PC表示（画面幅769px以上） */
+@media screen and (min-width: 769px) {
     .acc-img-grid {
-        overflow-x: visible;
+        display: flex !important;
+        flex-wrap: nowrap !important;
+        gap: 15px !important;
+        overflow-x: visible !important;
+        align-items: flex-start !important; /* 上揃えで高さの歪みを防ぐ */
     }
-    .acc-img {
-        width: 50%;
-        height: 380px; /* PCだけ縦長にする設定 */
+    
+    .acc-img-grid .acc-img {
+        flex: 1 1 0% !important; /* 均等に横幅を分配 */
+        width: 100% !important;
+        min-width: 0 !important;
+        height: auto !important; /* ★高さを固定せず自動（元の比率）にする */
+        aspect-ratio: 16 / 9 !important; /* ★横長画像（16:9）として縦横比を固定！ */
+        object-fit: cover !important; /* 枠いっぱいに綺麗に収める */
+        border-radius: 6px !important;
     }
 }
