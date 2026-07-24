@@ -5,6 +5,99 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>お知らせ | 株式会社 白井鋼業</title>
     <link rel="stylesheet" href="style.css">
+    
+    <!-- スマホ・PC両対応のための簡易調整スタイル（style.cssに記述してもOK） -->
+    <style>
+        /* ベースの幅と全体余白 */
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 30px 20px 60px; /* 画面端との余白をしっかり確保 */
+    box-sizing: border-box;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #0f2b5c;
+    margin-bottom: 25px;
+    padding-bottom: 12px;
+    position: relative;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40px;
+    height: 3px;
+    background-color: #1d4ed8;
+    border-radius: 2px;
+}
+
+/* ★お知らせカード（余白の調整） */
+.news-item {
+    background: #ffffff;
+    padding: 20px !important; /* 内側の上下左右に20pxの隙間を強制適用 */
+    margin-bottom: 20px;
+    border-radius: 12px;     /* 少し丸みを増やして優しく */
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); /* ほんのり上品な影 */
+    box-sizing: border-box !important;
+}
+
+/* お知らせ内の日付・タイトル・本文 */
+.news-item .date {
+    display: inline-block;
+    color: #64748b;
+    font-size: 0.85rem;
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+
+.news-item h3 {
+    font-size: 1.15rem;
+    color: #0f2b5c;
+    margin: 5px 0 15px;
+    line-height: 1.4;
+}
+
+.news-content {
+    color: #334155;
+    line-height: 1.7;
+    font-size: 0.95rem;
+}
+
+/* カレンダー画像も枠内に綺麗に収める */
+.news-image {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 15px auto;
+    border-radius: 6px;
+    border: 1px solid #eee;
+    box-sizing: border-box;
+}
+
+/* PC用の調整（横幅が広いときだけさらにゆったりさせる） */
+@media (min-width: 768px) {
+    .container {
+        padding: 50px 20px 80px;
+    }
+    .section-title {
+        font-size: 1.8rem;
+        margin-bottom: 40px;
+    }
+    .news-item {
+        padding: 30px !important; /* PCではさらに広めの30px余白 */
+        margin-bottom: 35px;
+    }
+}
+    </style>
 </head>
 <body>
 
@@ -30,28 +123,24 @@
     </div>
 </header>
 
-<!-- PCで見ても広がりすぎないように max-width: 800px と margin: 0 auto を設定 -->
-<div class="container" style="max-width: 800px; margin: 0 auto; padding: 50px 20px 80px; box-sizing: border-box;">
+<div class="container">
 
-    <!-- タイトル（中央寄せ＋青い下線） -->
-    <h2 class="section-title" style="text-align: center; font-size: 1.8rem; font-weight: bold; color: #0f2b5c; margin-bottom: 50px; position: relative; padding-bottom: 15px;">
-        お知らせ
-        <span style="content: ''; position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); width: 50px; height: 3px; background-color: #1d4ed8; border-radius: 2px;"></span>
-    </h2>
+    <!-- タイトル -->
+    <h2 class="section-title">お知らせ</h2>
 
     <div class="news-list">
         
         <!-- お知らせ 1 -->
-        <div class="news-item" style="background: #fff; padding: 30px; margin-bottom: 40px; border-radius: 8px; border: 1px solid #e2e8f0; box-shadow: 0 2px 5px rgba(0,0,0,0.03);">
+        <div class="news-item">
             <span class="date" style="color: #64748b; font-size: 0.9rem; font-weight: 500;">2026.07.15</span>
-            <h3 style="font-size: 1.25rem; color: #0f2b5c; margin: 10px 0 20px; line-height: 1.4;"><strong>夏季休業のお知らせ</strong></h3>
-            <div class="news-content" style="color: #334155; line-height: 1.8; font-size: 1rem;">
+            <h3 style="font-size: 1.2rem; color: #0f2b5c; margin: 10px 0 15px; line-height: 1.4;"><strong>夏季休業のお知らせ</strong></h3>
+            <div class="news-content" style="color: #334155; line-height: 1.7; font-size: 0.95rem;">
                 <p style="margin-bottom: 10px;">平素は格別のご愛顧を賜り、厚くお礼申し上げます。</p>
                 <p style="margin-bottom: 20px;">誠に勝手ながら、以下の期間を夏季休業とさせていただきます。</p>                
                 
-                <!-- カレンダー画像（PCで大きくなりすぎないように max-width: 500px 指定） -->
-                <div style="margin: 25px 0; text-align: center;">
-                    <img src="images/news/20260715.png" alt="夏季休業カレンダー" class="news-image" style="max-width: 100%; width: 500px; height: auto; display: block; margin: 0 auto; border-radius: 6px; border: 1px solid #eee;">
+                <!-- カレンダー画像 -->
+                <div style="margin: 20px 0; text-align: center;">
+                    <img src="images/news/20260715.png" alt="夏季休業カレンダー" class="news-image">
                 </div>
 
                 <p>17日からは通常営業いたします。ご理解の程、よろしくお願いいたします。</p>                
@@ -59,10 +148,10 @@
         </div>
         
         <!-- お知らせ 2 -->
-        <div class="news-item" style="background: #fff; padding: 30px; margin-bottom: 40px; border-radius: 8px; border: 1px solid #e2e8f0; box-shadow: 0 2px 5px rgba(0,0,0,0.03);">
+        <div class="news-item">
             <span class="date" style="color: #64748b; font-size: 0.9rem; font-weight: 500;">2026.07.01</span>
-            <h3 style="font-size: 1.25rem; color: #0f2b5c; margin: 10px 0 20px; line-height: 1.4;"><strong>ホームページを公開しました</strong></h3>
-            <div class="news-content" style="color: #334155; line-height: 1.8; font-size: 1rem;">
+            <h3 style="font-size: 1.2rem; color: #0f2b5c; margin: 10px 0 15px; line-height: 1.4;"><strong>ホームページを公開しました</strong></h3>
+            <div class="news-content" style="color: #334155; line-height: 1.7; font-size: 0.95rem;">
                 <p style="margin-bottom: 10px;">株式会社白井鋼業のホームページをご覧頂きまして、誠にありがとうございます。</p>
                 <p style="margin-bottom: 10px;">7月1日にホームページを公開いたしました。</p>
                 <p>今後とも、何卒よろしくお願いいたします。</p>

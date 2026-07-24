@@ -1,4 +1,4 @@
-/* ==========================================
+osira/* ==========================================
    株式会社 白井鋼業 共通＆メインCSS (style.css)
    ========================================== */
 
@@ -911,3 +911,32 @@ section h2.section-title:first-child {
         margin: 0 !important;
     }
 
+/* スマホ表示：横スクロールで2枚見せる */
+.acc-img-grid {
+    display: flex;
+    flex-direction: row;
+    gap: 12px;
+    overflow-x: auto; /* ★横スクロールを許可 */
+    margin-bottom: 20px;
+    padding-bottom: 8px; /* スクロールバー用の余白 */
+    -webkit-overflow-scrolling: touch; /* スマホで滑らかにスクロール */
+}
+
+.acc-img {
+    width: 85%;          /* 2枚目がチラッと見えて「右にスクロールできる」と直感的にわかるサイズ */
+    flex-shrink: 0;      /* 画像が潰れるのを防ぐ */
+    height: 200px;
+    object-fit: cover;
+    border-radius: 6px;
+}
+
+/* PC表示：スクロールなしで2枚均等に並べる */
+@media (min-width: 768px) {
+    .acc-img-grid {
+        overflow-x: visible;
+    }
+    .acc-img {
+        width: 50%;
+        height: 380px; /* PCだけ縦長にする設定 */
+    }
+}
