@@ -5,92 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>お持ち込みの流れ｜株式会社 白井鋼業</title>
     <link rel="stylesheet" href="style.css">
-   
-    <style>
-        /* ベース設定 */
-        :root {
-            --primary-color: #1a365d; 
-            --secondary-color: #2b6cb0; 
-            --alert-color: #e53e3e; 
-            --dark-color: #2d3748;
-            --light-color: #f7fafc;
-        }
-        * { box-sizing: border-box; margin: 0; padding: 0; }
-        body { 
-            font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', Meiryo, sans-serif; 
-            line-height: 1.6; 
-            color: var(--dark-color); 
-            background-color: var(--light-color); 
-            padding-top: 75px; 
-        }
-        a { text-decoration: none; color: inherit; }
-        ul { list-style: none; }
-        .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
-        .section-title { text-align: center; margin-bottom: 20px; font-size: 2rem; position: relative; padding-bottom: 10px; color: var(--primary-color); }
-        .section-title::after { content: ''; position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); width: 60px; height: 3px; background: var(--primary-color); }
-        section { padding: 60px 0; }
-
-        /* ページヘッダー */
-        .page-header { background: linear-gradient(rgba(26, 54, 93, 0.8), rgba(26, 54, 93, 0.9)), url('https://picsum.photos/1200/400') no-repeat center center/cover; padding: 80px 0 50px 0; text-align: center; color: #fff; margin-top: 70px; }
-        .page-header h1 { font-size: 2.2rem; margin-bottom: 15px; font-weight: bold; letter-spacing: 1px; }
-        .page-header p { font-size: 1.1rem; opacity: 0.9; }
-
-        /* 案内用カード・グリッド */
-        .guide-container { background: #fff; border-radius: 8px; padding: 40px 30px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); margin-bottom: 40px; border: 1px solid #e2e8f0; }
-        .step-block { display: flex; gap: 30px; margin-bottom: 40px; padding-bottom: 40px; border-bottom: 1px solid #e2e8f0; }
-        .step-block:last-child { margin-bottom: 0; padding-bottom: 0; border-bottom: none; }
-        
-        .step-badge-wrap { 
-            flex-shrink: 0; 
-            text-align: center; 
-            width: 150px; 
-        }
-        .step-badge { background: var(--primary-color); color: #fff; font-size: 1.1rem; font-weight: bold; padding: 8px 20px; border-radius: 4px; display: inline-block; width: 100%; margin-bottom: 15px; }
-        
-        .step-left-img {
-            width: 100%;
-            height: auto;
-            border-radius: 6px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-            display: block;
-        }
-
-        .step-content { flex-grow: 1; }
-        .step-content h3 { font-size: 1.4rem; color: var(--primary-color); margin-bottom: 15px; font-weight: bold; }
-        .step-content p { font-size: 1.05rem; color: #4a5568; margin-bottom: 10px; }
-        
-        /* 注意事項・案内ボックス */
-        .info-box { background: #fff; border: 1px solid #e2e8f0; border-left: 5px solid var(--secondary-color); padding: 20px; border-radius: 0 8px 8px 0; margin-top: 15px; }
-        .info-box-title { font-weight: bold; color: var(--secondary-color); margin-bottom: 5px; }
-        
-        .alert-box { background: #fff5f5; border: 1px solid #fed7d7; border-left: 5px solid var(--alert-color); padding: 20px; border-radius: 0 8px 8px 0; margin-top: 15px; }
-        .alert-box-title { font-weight: bold; color: var(--alert-color); margin-bottom: 5px; }
-        .alert-text { color: var(--alert-color); font-weight: bold; }
-
-        /* ボタン */
-        .btn-wrap { text-align: center; margin-top: 40px; }
-        .btn { display: inline-block; padding: 15px 40px; font-weight: bold; border-radius: 5px; transition: 0.3s; cursor: pointer; background: var(--primary-color); color: #fff; }
-        .btn:hover { opacity: 0.9; transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0,0,0,0.15); }
-
-        /* フッター */
-        footer { background: var(--primary-color); color: rgba(255,255,255,0.8); text-align: center; padding: 25px 0; font-size: 0.9rem; border-top: 3px solid var(--secondary-color); }
-
-        /* レスポンシブ調整 */
-        @media (max-width: 768px) {
-            .page-header h1 { font-size: 1.6rem; }
-            .page-header p { font-size: 0.95rem; }
-            .step-block { flex-direction: column; gap: 15px; padding-bottom: 30px; }
-            .step-badge-wrap { width: 100%; text-align: left; }
-            .step-badge { min-width: 100px; width: auto; margin-bottom: 10px; }
-            
-            .step-left-img {
-                max-width: 300px;
-                margin-bottom: 15px;
-            }
-            .step-content h3 { font-size: 1.2rem; }
-            .guide-container { padding: 25px 15px; }
-        }
-    </style>
 </head>
 <body>
 
@@ -118,92 +32,218 @@
         </div>
     </header>
 
-    <!-- メインコンテンツ -->
-    <section>
-        <div class="container">
-            <h2 class="section-title">お持ち込みの流れ</h2>
-            <p style="text-align: center; margin-bottom: 40px; color: #666;">事前の予約は不要です。<br>営業時間内に直接お越しください。</p>
+<!-- ==========================================
+     お持ち込みの流れ（プロ感・キャプションなし画像拡大版）
+     ========================================== -->
+<section class="visit-flow-section">
+    <div class="container">
+        <h2 class="section-title">お持ち込みの流れ</h2>
+        <p class="flow-lead">事前の予約は不要です。営業時間内に直接お越しください。</p>
 
-            <div class="guide-container">
-                
-                <!-- STEP 1 -->
-                <div class="step-block">
-                    <div class="step-badge-wrap">
-                        <span class="step-badge">STEP 01</span>
-                    </div>
-                    <div class="step-content">
-                        <h3>ご来社</h3>
-                        <p>トラックに荷物を積んだ状態で、そのまま敷地内のトラックスケール（大きな計量台）の上にお乗りください。</p>
-                        
-                        <div class="info-box">
-                            <div class="info-box-title">■ ポイント</div>
-                            <p>「1回目の計量（総重量の測定）」を行います。<br>スタッフがブザーを鳴らすまでそのまま車内でお待ちください。</p>
-                        </div>
+        <div class="flow-list">
+            
+            <!-- STEP 01 (画像なし) -->
+            <div class="flow-card">
+                <div class="flow-header">
+                    <span class="flow-badge">STEP 01</span>
+                    <h3 class="flow-title">ご来社</h3>
+                </div>
+                <div class="flow-body">
+                    <p class="flow-desc">トラックに荷物を積んだ状態で、そのまま敷地内のトラックスケール（大きな計量台）の上にお乗りください。</p>
+                    <div class="flow-info">
+                        <strong>ポイント</strong>
+                        <p>「1回目の計量（総重量の測定）」を行います。スタッフがブザーを鳴らすまで車内でお待ちください。</p>
                     </div>
                 </div>
-
-                <!-- STEP 2 -->
-                <div class="step-block">
-                    <div class="step-badge-wrap">
-                        <span class="step-badge">STEP 02</span>
-                        <img src="images/step2.png" alt="荷下ろし作業イメージ" class="step-left-img">
-                    </div>
-                    <div class="step-content">
-                        <h3>荷下ろし（誘導・作業）</h3>
-                        <p>1回目の計量が終わりましたら、1⃣の場所までお進みください。<br>スタッフが資材を確認後、荷下ろし場所をご案内いたします。</p>
-                        
-                        <div class="info-box">
-                            <div class="info-box-title">■ ポイント</div>
-                            <p>重い荷物や大量のスクラップは、当社の重機やスタッフが荷下ろしをお手伝いいたしますので、不慣れな方もご安心ください。</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- STEP 3 -->
-                <div class="step-block">
-                    <div class="step-badge-wrap">
-                        <span class="step-badge">STEP 03</span>
-                    </div>
-                    <div class="step-content">
-                        <h3>空車での再計量</h3>
-                        <p>荷下ろしが完了しましたら、再度トラックスケール（計量台）の上にお車をお乗せください。<br>「2回目の計量（車輌のみの重量測定）」を行います。ブザーが鳴るまでお待ちください。</p>
-                        
-                        <div class="info-box">
-                            <div class="info-box-title">■ 計算方法</div>
-                            <p><strong>【1回目の総重量】 － 【2回目の空車重量】 ＝ 【お引き取りしたスクラップの純粋な重量】</strong> として正確に算出されます。</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- STEP 4 -->
-                <div class="step-block">
-                    <div class="step-badge-wrap">
-                        <span class="step-badge">STEP 04</span>
-                        <img src="images/step4.png" alt="荷下ろし作業イメージ" class="step-left-img">
-                    </div>
-                    <div class="step-content">
-                        <h3>受付・お支払い（ご精算）</h3>
-                        <p>計量がすべて完了しましたら、トラックを端へ移動させ、計量所窓口までお越しください。<br>計量証明書（伝票）を発行いたします。</p>
-                        <p>買い取り対象の品目・重量に応じた金額を、その場で現金にてお支払い（ご精算）いたします。</p>
-                        
-                        <div class="alert-box">
-                            <div class="alert-box-title">■ ご注意</div>
-                            <p class="alert-text">※金属の買い取りにあたり、法律に基づき「身分証明書（運転免許証・保険証など）」のご提示をお願いする場合がございます。お持ち込みの際は必ずご持参ください。</p>
-                        </div>
-                    </div>
-                </div>
-
             </div>
 
-            <!-- トップへ戻るボタン -->
-            <div class="btn-wrap">
-                <a href="index.html" class="btn">トップページへ戻る</a>
+            <!-- STEP 02 (画像あり) -->
+            <div class="flow-card">
+                <div class="flow-header">
+                    <span class="flow-badge">STEP 02</span>
+                    <h3 class="flow-title">荷下ろし（誘導・作業）</h3>
+                </div>
+                <div class="flow-body flow-has-img">
+                    <div class="flow-text-group">
+                        <p class="flow-desc">1回目の計量が終わりましたら、指定の場所までお進みください。スタッフが資材を確認後、荷下ろし場所をご案内いたします。</p>
+                        <div class="flow-info">
+                            <strong>ポイント</strong>
+                            <p>重い荷物や大量のスクラップは、当社の重機やスタッフがお手伝いいたしますのでご安心ください。</p>
+                        </div>
+                    </div>
+                    <!-- PCでは右、スマホでは下に配置（文字なし・画像大きめ） -->
+                    <div class="flow-img-box">
+                        <img src="images/step2.png" alt="荷下ろし作業">
+                    </div>
+                </div>
+            </div>
+
+            <!-- STEP 03 (画像なし) -->
+            <div class="flow-card">
+                <div class="flow-header">
+                    <span class="flow-badge">STEP 03</span>
+                    <h3 class="flow-title">空車での再計量</h3>
+                </div>
+                <div class="flow-body">
+                    <p class="flow-desc">荷下ろしが完了しましたら、再度トラックスケールの上にお車をお乗せください。「2回目の計量（車輌のみの重量）」を行います。</p>
+                    <div class="flow-calc">
+                        【1回目 総重量】 － 【2回目 空車重量】 ＝ 【お引き取り純重量】
+                    </div>
+                </div>
+            </div>
+
+            <!-- STEP 04 (画像あり) -->
+            <div class="flow-card">
+                <div class="flow-header">
+                    <span class="flow-badge">STEP 04</span>
+                    <h3 class="flow-title">受付・お支払い（ご精算）</h3>
+                </div>
+                <div class="flow-body flow-has-img">
+                    <div class="flow-text-group">
+                        <p class="flow-desc">計量が完了しましたらトラックを端へ移動させ、窓口までお越しください。計量証明書を発行し、その場で現金にてご精算いたします。</p>
+                        <div class="flow-alert">
+                            <strong>ご注意</strong>
+                            <p>買い取りの際、法律に基づき「身分証明書（運転免許証等）」のご提示が必要です。</p>
+                        </div>
+                    </div>
+                    <!-- PCでは右、スマホでは下に配置（文字なし・画像大きめ） -->
+                    <div class="flow-img-box">
+                        <img src="images/step4.png" alt="受付精算">
+                    </div>
+                </div>
             </div>
 
         </div>
-    </section>
 
-    <!-- フッター -->
+        <div class="btn-wrap">
+            <a href="index.html" class="btn">トップページへ戻る</a>
+        </div>
+    </div>
+</section>
+
+<!-- 専用CSS -->
+<style>
+    .visit-flow-section {
+        padding: 40px 0 60px;
+        background: #f8fafc;
+    }
+    .flow-lead {
+        text-align: center;
+        font-size: 0.9rem;
+        color: #64748b;
+        margin-bottom: 30px;
+    }
+    .flow-list {
+        max-width: 780px;
+        margin: 0 auto 40px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    /* 共通カード */
+    .flow-card {
+        background: #fff;
+        border: 1px solid #e2e8f0;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.02);
+    }
+    .flow-header {
+        background: #f8fafc;
+        padding: 12px 20px;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        border-bottom: 1px solid #e2e8f0;
+    }
+    .flow-badge {
+        background: #1a365d;
+        color: #fff;
+        font-size: 0.75rem;
+        font-weight: bold;
+        padding: 3px 8px;
+        border-radius: 4px;
+        letter-spacing: 0.5px;
+    }
+    .flow-title {
+        font-size: 1rem;
+        font-weight: bold;
+        color: #1a365d;
+        margin: 0;
+    }
+    .flow-body {
+        padding: 20px;
+    }
+
+    /* PC表示：画像がある場合は横並びにする設定 */
+    .flow-has-img {
+        display: flex;
+        gap: 24px;
+        align-items: flex-start;
+    }
+    .flow-text-group {
+        flex: 1;
+    }
+
+    .flow-desc {
+        font-size: 0.875rem;
+        color: #334155;
+        line-height: 1.6;
+        margin-bottom: 12px;
+    }
+
+    /* ポイント・注意書き */
+    .flow-info, .flow-alert, .flow-calc {
+        padding: 10px 12px;
+        border-radius: 6px;
+        font-size: 0.8rem;
+    }
+    .flow-info { background: #f8fafc; border-left: 3px solid #1d4ed8; }
+    .flow-info strong { color: #1d4ed8; display: block; margin-bottom: 2px; }
+    .flow-info p { margin: 0; color: #475569; }
+
+    .flow-alert { background: #fff5f5; border-left: 3px solid #e11d48; }
+    .flow-alert strong { color: #e11d48; display: block; margin-bottom: 2px; }
+    .flow-alert p { margin: 0; color: #991b1b; }
+
+    .flow-calc { background: #f8fafc; border: 1px dashed #cbd5e1; text-align: center; font-weight: bold; color: #334155; }
+
+    /* ★画像の調整（文字を消した分、高さをアップ） */
+    .flow-img-box {
+        width: 190px; /* 少しだけ横幅も広げました */
+        flex-shrink: 0;
+        text-align: center;
+    }
+    .flow-img-box img {
+        width: 100%;
+        height: 140px; /* 110px → 140px に縦幅アップ！PCの文章の高さと綺麗に揃います */
+        object-fit: cover;
+        border-radius: 6px;
+        border: 1px solid #e2e8f0;
+    }
+
+    /* 📱 スマホ表示のとき（縦並びに自動切り替え） */
+    @media (max-width: 640px) {
+        .flow-has-img {
+            flex-direction: column;
+            gap: 15px;
+        }
+        .flow-img-box {
+            width: 100%;
+            margin-top: 5px;
+            padding-top: 15px;
+            border-top: 1px dashed #e2e8f0;
+        }
+        .flow-img-box img {
+            max-width: 220px; 
+            height: 160px; /* 120px → 160px に縦幅アップ！スマホでもしっかり見えます */
+        }
+        .flow-body { padding: 16px; }
+        .flow-header { padding: 10px 16px; }
+    }
+</style>
+   <!-- フッター -->
     <footer>
         <p>&copy; 2026 株式会社 白井鋼業 All Rights Reserved.</p>
     </footer>
