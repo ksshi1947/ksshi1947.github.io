@@ -304,14 +304,230 @@ footer { background: #0f2b5c; color: #94a3b8; text-align: center; padding: 30px 
     .item-title { font-size: 0.88rem !important; margin-bottom: 1px !important; }
     .item-desc { font-size: 0.75rem !important; line-height: 1.25 !important; }
 
-    .contact-box { padding: 15px 10px !important; }
-    .tel-card { padding: 8px 10px !important; margin: 0 0 10px 0 !important; border-radius: 6px !important; }
-    .tel-number { font-size: 2.2rem; }
-    .tel-number a { pointer-events: auto; color: var(--secondary-color); text-decoration: underline; font-size: 1.3rem !important; }
-    .sub-contact-line { flex-direction: column; gap: 4px !important; font-size: 0.78rem !important; align-items: center; margin-bottom: 10px !important; }
-
     #business .grid, #business .business-grid, #business .business-list { display: flex !important; flex-direction: column !important; gap: 5px !important; }
     #business .card, #business .business-card { margin: 0 !important; padding: 6px 8px !important; border-radius: 5px !important; }
     #business h3, #business .business-card h3 { font-size: 0.8rem !important; font-weight: 600 !important; line-height: 1.2 !important; margin: 0 !important; }
 }
 
+
+/* ------------------------------------------
+   📱 スマホ専用：事業内容 ＆ 新着情報のサイズ微調整 (768px以下)
+   ------------------------------------------ */
+@media screen and (max-width: 768px) {
+
+    /* --- 事業内容セクション --- */
+    /* 「確かな信頼と各種許認可に基づき…」の文言 */
+    #business p {
+        font-size: 0.85rem !important; /* 少し小さくスッキリ */
+        margin-bottom: 20px !important;
+        line-height: 1.5 !important;
+    }
+    
+    /* 事業内容カード（8つのマス） */
+    #business .business-card-grid {
+        grid-template-columns: 1fr 1fr !important; /* 2列配置 */
+        gap: 8px !important;
+    }
+    #business .business-card {
+        font-size: 0.85rem !important; /* マスの中身も控えめなサイズに */
+        padding: 10px 6px !important;
+        min-height: 55px !important;
+        line-height: 1.3 !important;
+    }
+
+    /* 「個人のお客様は…」の注意書き */
+    .individual-note {
+        font-size: 0.8rem !important;
+        margin-top: 15px !important;
+    }
+
+    /* 「初めてお持ち込みされる方へ」のボタン枠 */
+    #business div[style*="border: 2px solid"] {
+        padding: 12px 15px !important; /* 枠のパディングをコンパクトに */
+    }
+    #business div[style*="border: 2px solid"] a {
+        font-size: 0.88rem !important; /* 文字サイズを大きすぎず統一 */
+        line-height: 1.4 !important;
+    }
+
+
+    /* --- 新着情報（お知らせ）セクション --- */
+    /* お知らせ枠全体 */
+    .news-frame {
+        padding: 16px 14px !important;
+    }
+
+    /* 日付とタイトルの行 */
+    .news-list li {
+        padding: 10px 0 !important;
+        font-size: 0.88rem !important; /* お知らせの本文サイズをスッキリ化 */
+        line-height: 1.4 !important;
+    }
+
+    /* 日付の部分 */
+    .news-list li span[style*="min-width"] {
+        font-size: 0.8rem !important; /* 日付は少し控えめに */
+        min-width: 85px !important;
+    }
+
+    /* 「お知らせ一覧を見る ＞」リンク */
+    .news-frame a {
+        font-size: 0.85rem !important;
+    }
+}
+
+
+/* ------------------------------------------
+   📱 スマホ専用のお問い合わせ調整 (768px以下)
+   ------------------------------------------ */
+@media screen and (max-width: 768px) {
+
+    /* お問い合わせ枠全体 */
+    .contact-box { 
+        padding: 20px 15px !important; 
+    }
+    
+    /* 「お見積もり・ご相談は無料です」の文言 */
+    .contact-box > p {
+        font-size: 0.95rem !important;
+        line-height: 1.5 !important;
+    }
+
+    /* 電話番号の白いカード枠 */
+    .tel-card { 
+        padding: 15px 10px !important; 
+        margin: 15px 0 !important; 
+        border-radius: 8px !important; 
+    }
+    .tel-card label {
+        font-size: 0.85rem !important;
+    }
+
+    /* 電話番号本体のサイズをスマホ用にスッキリ調整 */
+    .tel-number { 
+        font-size: 1.8rem !important; 
+        line-height: 1.2 !important;
+    }
+    .tel-number a { 
+        font-size: 1.8rem !important; /* でかすぎず小さすぎないちょうど良いサイズ */
+        color: var(--primary-color) !important;
+        text-decoration: none !important;
+    }
+
+    /* FAX と E-MAIL の行 */
+    .sub-contact-line { 
+        flex-direction: column !important; 
+        gap: 6px !important; 
+        font-size: 0.88rem !important; 
+        align-items: center !important; 
+        margin-top: 15px !important;
+        margin-bottom: 10px !important; 
+    }
+
+    /* 受付時間の注意書き */
+    .contact-box p:last-child {
+        font-size: 0.8rem !important;
+        margin-top: 15px !important;
+    }
+}
+
+/* ==========================================
+   受付時間：8:00と13:00を縦綺麗に揃える
+   ========================================== */
+.contact-hours-box {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 8px; /* 「月～土」と「08:00」の間の余白 */
+    margin-top: 25px;
+    color: #64748b;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+.hours-title {
+    flex-shrink: 0; /* 「受付時間： 月～土」が折り返されないように保持 */
+}
+
+.hours-time-list {
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+}
+
+.hours-time-list .holiday {
+    font-size: 0.9em;
+}
+
+/* 📱 スマホ用調整（画面幅に合わせてスッキリ収める） */
+@media screen and (max-width: 768px) {
+    .contact-hours-box {
+        font-size: 0.8rem !important; /* スマホ画面で1行に収まるサイズ */
+        gap: 6px !important;
+        margin-top: 20px !important;
+    }
+}
+/* ==========================================
+   お問い合わせ欄：PC/スマホ表示切り替え
+   ========================================== */
+
+/* 通常時（PC）：スマホ用を非表示 */
+.sp-contact-info {
+    display: none;
+}
+
+/* スマホ用テーブル基本CSS */
+.contact-info-table {
+    display: table;
+    margin: 18px auto 0 auto;
+    font-size: 0.82rem;
+    color: #334155;
+    text-align: left;
+}
+.info-row {
+    display: table-row;
+    line-height: 1.8;
+}
+.info-label {
+    display: table-cell;
+    font-weight: bold;
+    color: var(--primary-color);
+    text-align: justify;
+    text-align-last: justify;
+    padding-right: 4px;
+    vertical-align: top;
+}
+.info-colon {
+    display: table-cell;
+    font-weight: bold;
+    color: var(--primary-color);
+    padding: 0 6px;
+    vertical-align: top;
+}
+.info-value {
+    display: table-cell;
+    vertical-align: top;
+    color: #334155;
+}
+.info-value a {
+    color: #334155;
+    word-break: break-all;
+}
+.hours-inner {
+    display: flex;
+    flex-direction: column;
+}
+.hours-inner .holiday {
+    color: #64748b;
+    font-size: 0.88em;
+}
+
+/* 📱 スマホ表示時（768px以下）：PC用を隠してスマホ用を表示 */
+@media screen and (max-width: 768px) {
+    .pc-contact-info {
+        display: none !important; /* PC用を完全に隠す */
+    }
+    .sp-contact-info {
+        display: block !important; /* スマホ用を表示する */
+    }
+}

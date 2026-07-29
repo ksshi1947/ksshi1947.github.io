@@ -211,13 +211,14 @@
 
     /* ★画像の調整（文字を消した分、高さをアップ） */
     .flow-img-box {
-        width: 190px; /* 少しだけ横幅も広げました */
+        width: 220px; /* 少しだけ横幅も広げました */
         flex-shrink: 0;
         text-align: center;
     }
     .flow-img-box img {
         width: 100%;
-        height: 140px; /* 110px → 140px に縦幅アップ！PCの文章の高さと綺麗に揃います */
+        height: 190px; 
+
         object-fit: cover;
         border-radius: 6px;
         border: 1px solid #e2e8f0;
@@ -242,6 +243,17 @@
         .flow-body { padding: 16px; }
         .flow-header { padding: 10px 16px; }
     }
+
+/* ボタンの親要素を中央寄せにする */
+.btn-wrap {
+    text-align: center;
+    margin-top: 30px; /* 上との余白（調整はお好みで） */
+}
+
+/* ボタン自体のインラインブロック化（念のためセットで） */
+.btn-wrap .btn {
+    display: inline-block;
+}
 </style>
    <!-- フッター -->
     <footer>
