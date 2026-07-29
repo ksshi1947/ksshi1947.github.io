@@ -531,3 +531,12 @@ footer { background: #0f2b5c; color: #94a3b8; text-align: center; padding: 30px 
         display: block !important; /* スマホ用を表示する */
     }
 }
+
+/* 📱 スマホ時：三本線ボタンの位置を直接固定指定で調整 */
+@media screen and (max-width: 768px) {
+    .menu-btn {
+        position: relative !important;
+        right: 8px !important; /* ←★数字を大きくすると「左」に、小さくすると「右」に移動します */
+        margin-left: auto !important;
+    }
+}
